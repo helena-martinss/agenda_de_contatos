@@ -21,14 +21,6 @@ document.getElementById('form-agenda').addEventListener('submit', function(event
         </div>
     `;
 
-    newContact.querySelector('.bi-caret-down-fill').addEventListener('click', function() {
-        const details = newContact.querySelector('.contact-details');
-        details.classList.toggle('open');
-    });
-
-    contactList.appendChild(newContact);
-    document.getElementById('form-agenda').reset();
-
     newContact.querySelector('.bi-heart').addEventListener('click', function() {
         const heartIcon = this;
     
@@ -46,6 +38,7 @@ document.getElementById('form-agenda').addEventListener('submit', function(event
     
     function addFavorite(newContact) {
         const newFavorite = newContact.cloneNode(true);
+        newFavorite.setAttribute('data-clone', 'true');
         favoriteList.appendChild(newFavorite);
     
         // Manter o estado do ícone de coração no clone
@@ -71,7 +64,8 @@ document.getElementById('form-agenda').addEventListener('submit', function(event
         const favoriteItems = Array.from(favoriteList.children);
         const contactId = newContact.getAttribute('data-id');
     
-        const itemToRemove = favoriteItems.find(item => item.getAttribute('data-id') === contactId);
+        // Encontrar e remover o clone correto
+        const itemToRemove = favoriteItems.find(item => item.getAttribute('data-id') === contactId && item.getAttribute('data-clone') === 'true');
         if (itemToRemove) {
             itemToRemove.remove();
         }
