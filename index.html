@@ -4,32 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda de contatos</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./build/styles/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Agenda de Contatos</h1>
-        </header>
-        <form id="form-agenda">
-            <input type="text" id="nome" required placeholder="Nome">
-            <input type="number" id="telefone" required placeholder="Telefone">
-            <button type="submit">Cadastrar</button>
-        </form>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                <th>Telefone</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="#" onclick="openTab('contacts')" class="menu-item">
+                        <i class="bi bi-person-fill"></i>
+                        <p>Contatos</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="openTab('add-contact')" class="menu-item">
+                        <i class="bi bi-plus-lg"></i>
+                        <p>Adicionar</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="openTab('favorites')" class="menu-item">
+                        <i class="bi bi-heart-fill"></i>
+                        <p>Favoritos</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="add-contact" class="tab-content active">
+            <h1 class="titulo-imagem">Adicionar contato</h1>
+            <i class="bi bi-person-fill"></i>
+            <form id="form-agenda">
+                <input type="text" id="nome" required placeholder="Nome">
+                <input type="number" id="telefone" required placeholder="Telefone">
+                <input type="email" id="email" placeholder="Email">
+                <button type="submit">Adicionar</button>
+            </form>
+            <p id="mensagem-confirmacao">Contato adicionado com sucesso!</p>
+        </div>
+        </div>
+        <div id="contacts" class="tab-content">
+            <h1>Contatos</h1>
+            <ul id="contact-list">
+                <li class="contact-item">
+                </li>                
+            </ul>
+        </div>
+        <div id="favorites" class="tab-content">
+            <h1>Favoritos</h1>
+            <ul id="favorite-list">
+                <li class="favorite-item">
+                </li>                
+            </ul>
+        </div>
     </div>
     <script src="./main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function openTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
 </body>
 </html>

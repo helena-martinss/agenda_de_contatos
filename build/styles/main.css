@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Didact Gothic", sans-serif;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  background: linear-gradient(45deg, #86ddd6, #cc98c8);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 50px;
+}
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+.sidebar {
+  height: 100%;
+  width: 150px;
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  color: #000;
+  margin-top: 25px;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar ul {
+  list-style: none;
+}
+.sidebar ul li {
+  text-align: center;
+}
+.sidebar a {
+  color: #000;
+  text-decoration: none;
+}
+.sidebar a:hover {
+  color: #000;
+  text-decoration: none;
+}
+.sidebar .bi-person-fill,
+.sidebar .bi-plus-lg,
+.sidebar .bi-heart-fill {
+  font-size: 50px;
+}
+.sidebar .menu-item {
+  cursor: pointer;
+  display: inline-block;
+  transition: transform 0.3s;
+}
+.sidebar .menu-item:hover {
+  transform: scale(1.1);
+}
+#add-contact .bi-person-fill {
+  font-size: 100px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+header h1 {
+  font-size: 50px;
+  text-align: center;
+  width: 100%;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+.container {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+.titulo-imagem {
+  display: flex;
+  justify-content: center;
+}
+form {
+  margin-top: 20px;
+}
+form input {
+  background-color: #ffffffa4;
+  padding: 15px;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+form button {
+  background-color: #fff;
+  display: flex;
+  color: #000;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  font-size: 30px;
+  width: 100%;
+  max-width: 350px;
+  height: 60px;
+  justify-content: center;
+  /* Centraliza horizontalmente */
+  align-items: center;
+  /* Centraliza verticalmente */
+}
+form button:hover {
+  background-color: #ffffffa4;
+}
+form button:active {
+  transform: scale(0.98);
+}
+form button,
+input {
+  display: block;
+  margin: 5px;
+  width: 350px;
+  height: 50px;
+}
+#contacts h1 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+#contact-list li {
+  list-style: none;
+  font-size: 24px;
+}
+#contact-list li img {
+  height: 50px;
+  width: 50px;
+  margin-right: 15px;
+}
+.contact-item {
+  text-align: center;
+  font-size: 24px;
+}
+.contact-header {
+  cursor: pointer;
+  display: flex;
+  /* Usa flex para alinhar ícone e cabeçalho */
+  align-items: center;
+  /* Centraliza verticalmente */
+  justify-content: center;
+  /* Centraliza horizontalmente */
+}
+.contact-header .bi-person-fill {
+  font-size: 50px;
+  margin-right: 10px;
+  /* Espaço entre o ícone e o texto */
+  margin-bottom: 10px;
+}
+.contact-header .bi-caret-down-fill {
+  font-size: 20px;
+  margin-left: 8px;
+}
+.contact-header .bi-heart {
+  font-size: 30px;
+  margin-left: 10px;
+}
+.contact-header .bi-heart-fill {
+  font-size: 30px;
+  margin-left: 10px;
+}
+.contact-details {
+  max-height: 0;
+  /* Altura inicial 0 para ocultar os detalhes */
+  overflow: hidden;
+  /* Necessário para a animação */
+  transition: max-height 0.3s ease-out;
+  /* Animação de deslizamento */
+}
+.contact-details.open {
+  max-height: 100px;
+  /* Altura máxima quando aberto (ajuste conforme necessário) */
+}
+#mensagem-confirmacao {
+  display: none;
+  text-align: center;
+  background-color: #3f8f3f;
+  border-radius: 20px;
+  border: none;
+  padding: 8px 10px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+#favorites h1 {
+  display: flex;
+  justify-content: center;
+}

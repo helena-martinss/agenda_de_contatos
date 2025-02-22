@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Didact Gothic", sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(45deg, #86ddd6, #cc98c8);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 50px; 
+}
+
+.tab-content {
+    display: none;
+    &.active {
+        display: block;
+    }
+}
+
+.sidebar {
+    height: 100%;
+    width: 150px;
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    color: #000;
+    margin-top: 25px;
+    align-items: center;
+    justify-content: center;
+
+    ul {
+        list-style: none;
+
+        li {
+            text-align: center;
+        }
+    }
+
+    a {
+        color: #000;
+        text-decoration: none;
+
+        &:hover {
+            color: #000;
+            text-decoration: none;
+        }
+    }
+
+    .bi-person-fill, .bi-plus-lg, .bi-heart-fill {
+        font-size: 50px;
+    }
+
+    .menu-item {
+        cursor: pointer;
+        display: inline-block;
+        transition: transform 0.3s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+
+#add-contact .bi-person-fill {
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+
+    h1 {
+        font-size: 50px;
+        text-align: center;
+        width: 100%;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+    }
+}
+
+.container {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.titulo-imagem {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    margin-top: 20px;
+
+    input {
+        background-color: #ffffffa4;
+        padding: 15px;
+        border: none;
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+    
+    button {
+        background-color: #fff;
+        display: flex;
+        color: #000;
+        border: none;
+        border-radius: 20px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        text-align: center;
+        font-size: 30px;
+        width: 100%;
+        max-width: 350px;
+        height: 60px;
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; /* Centraliza verticalmente */
+
+        &:hover {
+            background-color: #ffffffa4;
+        }
+
+        &:active {
+            transform: scale(0.98);
+        }
+    }
+}
+
+form button, input {
+    display: block;
+    margin: 5px;
+    width: 350px;
+    height: 50px;
+}
+
+#contacts {
+    h1 {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 24px;   
+    }
+}
+
+#contact-list {
+    li {
+        list-style: none;
+        font-size: 24px;
+
+        img {
+            height: 50px;
+            width: 50px;
+            margin-right: 15px;
+        }
+    }
+}
+
+.contact-item {
+    text-align: center;
+    font-size: 24px;
+}
+
+.contact-header {
+    cursor: pointer;
+    display: flex; /* Usa flex para alinhar ícone e cabeçalho */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+
+    .bi-person-fill {
+        font-size: 50px;
+        margin-right: 10px; /* Espaço entre o ícone e o texto */
+        margin-bottom: 10px;
+    }
+
+    .bi-caret-down-fill {
+        font-size: 20px;
+        margin-left: 8px;
+    }
+
+    .bi-heart {
+        font-size: 30px;
+        margin-left: 10px;
+    }
+
+    .bi-heart-fill {
+        font-size: 30px;
+        margin-left: 10px;
+    }
+}
+
+.contact-details {
+    max-height: 0; /* Altura inicial 0 para ocultar os detalhes */
+    overflow: hidden; /* Necessário para a animação */
+    transition: max-height 0.3s ease-out; /* Animação de deslizamento */
+
+    &.open {
+        max-height: 100px; /* Altura máxima quando aberto (ajuste conforme necessário) */
+    }
+}
+
+#mensagem-confirmacao {
+    display: none;
+    text-align: center;
+    background-color: rgb(63, 143, 63);
+    border-radius: 20px;
+    border: none;
+    padding: 8px 10px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+#favorites {
+    h1 {
+        display: flex;
+        justify-content: center;
+    }
+}
